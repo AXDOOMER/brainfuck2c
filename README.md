@@ -4,7 +4,7 @@ Brainfuck to C transcompiler written in Bash.
 
 ## Requirements
 
-Have `bash`, `sed`, `which` and `gcc` installed. Most Linux distributions have them already installed.
+Have `bash`, `sed`, `which`, `mktemp` and `gcc` installed. Most Linux distributions have them already installed.
 
 ## Usage
 
