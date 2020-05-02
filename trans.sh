@@ -17,7 +17,7 @@ echo "char array[30000] = {0}; char *ptr = array; int main() {" >> $TEMP_FILE
 
 echo "translating..."
 
-cat $1 | sed 's/[^][,.<>+-]//g'| sed 's/+/++*ptr;/g' | sed 's/-/--*ptr;/g' | sed 's/>/++ptr;/g' | sed 's/</--ptr;/g' | sed 's/\./putchar(*ptr);/g' | sed 's/,/*ptr=getchar();/g' | sed 's/\[/while (*ptr) {/g' | sed 's/\]/}/g' >> $TEMP_FILE
+cat $1 | sed -e 's/[^][,.<>+-]//g' -e 's/+/++*ptr;/g' -e 's/-/--*ptr;/g' -e 's/>/++ptr;/g' -e 's/</--ptr;/g' -e 's/\./putchar(*ptr);/g' -e 's/,/*ptr=getchar();/g' -e 's/\[/while (*ptr) {/g' -e 's/\]/}/g' >> $TEMP_FILE
 
 echo "return 0;}" >> $TEMP_FILE
 
